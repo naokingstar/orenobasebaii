@@ -43,7 +43,7 @@ const upload = multer({
 });
 
 async function duration(file) {
-  const { stdout } = await execFileAsync("ffprobe", [
+  const { stdout } = await execFileAsync(ffprobeStatic.path, [
     "-v", "error",
     "-show_entries", "format=duration",
     "-of", "default=noprint_wrappers=1:nokey=1",
@@ -512,7 +512,7 @@ async function adjust(input, output, target) {
 
 async function hasAudioStream(video) {
   try {
-    const { stdout } = await execFileAsync("ffprobe", [
+    const { stdout } = await execFileAsync(ffprobeStatic.path, [
       "-v", "error",
       "-select_streams", "a",
       "-show_entries", "stream=index",
