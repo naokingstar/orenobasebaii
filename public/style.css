@@ -1,0 +1,32 @@
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Noto Sans JP","Hiragino Sans",sans-serif;background:#0f172a;color:#fff}
+.hero{min-height:65vh;display:flex;align-items:center;justify-content:center;padding:40px 20px;background:linear-gradient(rgba(15,23,42,.76),rgba(15,23,42,.92)),url("https://images.unsplash.com/photo-1566577739112-5180d4bf9390?q=80&w=1800");background-size:cover;background-position:center}
+.hero-inner{max-width:900px;width:100%}
+.badge{display:inline-block;background:#22c55e;color:#052e16;font-weight:bold;padding:8px 18px;border-radius:999px;margin-bottom:25px}
+h1{font-size:58px;line-height:1.2;margin-bottom:18px}
+.lead{font-size:22px;line-height:1.9;margin-bottom:32px}
+.cta{display:inline-block;background:#22c55e;color:#052e16;text-decoration:none;padding:18px 34px;border-radius:14px;font-size:20px;font-weight:bold}
+.section{padding:60px 20px}
+.inner{max-width:1000px;margin:auto}
+h2{text-align:center;font-size:34px;margin-bottom:30px}
+.form,.result,.error{background:#1e293b;border:1px solid rgba(255,255,255,.1);border-radius:22px;padding:26px;line-height:1.9}
+.form{max-width:780px;margin:auto}
+label{display:block;margin-top:20px;margin-bottom:8px;font-weight:bold}
+input,select,textarea{width:100%;padding:15px;border:none;border-radius:12px;font-size:16px}
+textarea{min-height:100px;resize:vertical}
+video{width:100%;margin-top:18px;border-radius:16px;background:#000}
+button{width:100%;margin-top:26px;padding:18px;border:none;border-radius:14px;background:#22c55e;color:#052e16;font-size:19px;font-weight:bold;cursor:pointer}
+button.sub{background:#38bdf8;color:#082f49}
+.loading{margin-top:26px;background:#111827;padding:24px;border-radius:18px}
+.bar-wrap{height:18px;background:#334155;border-radius:999px;overflow:hidden;margin-top:16px}
+.bar{height:100%;width:0%;background:#22c55e;transition:.25s}
+.result{margin-top:28px}
+.error{margin-top:28px;background:#7f1d1d;color:#fecaca}
+.result h3{margin-top:22px;color:#86efac}
+.result-text{font-size:18px;line-height:1.9;background:rgba(0,0,0,.25);padding:22px;border-radius:16px;white-space:pre-wrap}
+.score{background:#020617;border-radius:16px;padding:18px;line-height:2;font-weight:bold;color:#86efac}
+.download{display:block;text-align:center;margin-top:16px;padding:16px;border-radius:14px;background:#facc15;color:#422006;text-decoration:none;font-weight:bold}
+.hint{margin-top:10px;color:#86efac;font-weight:bold}
+footer{text-align:center;padding:35px 20px;color:#94a3b8}
+footer a{color:#cbd5e1;margin:0 8px;font-size:13px}
+@media(max-width:600px){h1{font-size:44px}.lead{font-size:18px}.section{padding:48px 18px}}
