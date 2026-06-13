@@ -3,6 +3,7 @@ import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
 import OpenAI from "openai";
+import ffprobeStatic from "ffprobe-static";
 import multer from "multer";
 import path from "path";
 import fs from "fs";
