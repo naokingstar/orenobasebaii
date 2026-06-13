@@ -4,6 +4,7 @@ import cors from "cors";
 import dotenv from "dotenv";
 import OpenAI from "openai";
 import ffprobeStatic from "ffprobe-static";
+import ffmpegStatic from "ffmpeg-static";
 import multer from "multer";
 import path from "path";
 import fs from "fs";
@@ -58,7 +59,7 @@ async function extractFrames(video, dur, id) {
   const arr = [];
   for (let i = 0; i < ratios.length; i++) {
     const out = path.join(framesDir, `${id}-${i}.jpg`);
-    await execFileAsync("ffmpeg", [
+    await execFileAsync(ffmpegStatic, [
       "-y",
       "-ss", String(Math.max(0.1, dur * ratios[i])),
       "-i", video,
@@ -508,7 +509,7 @@ async function adjust(input, output, target) {
     return;
   }
   const tempo = Math.min(1.8, Math.max(1.05, d / target));
-  await execFileAsync("ffmpeg", ["-y", "-i", input, "-filter:a", `atempo=${tempo.toFixed(3)}`, "-vn", output]);
+  await execFileAsync(ffmpegStatic, ["-y", "-i", input, "-filter:a", `atempo=${tempo.toFixed(3)}`, "-vn", output]);
 }
 
 async function hasAudioStream(video) {
@@ -532,7 +533,7 @@ async function merge(video, audio, out, start) {
 
   if (originalHasAudio) {
     // 元動画音声50% + AI実況音声100%でミックス
-    await execFileAsync("ffmpeg", [
+    await execFileAsync(ffmpegStatic, [
       "-y",
       "-i", video,
       "-i", audio,
@@ -547,7 +548,7 @@ async function merge(video, audio, out, start) {
     ]);
   } else {
     // 元動画に音声がない場合は、従来通りAI実況だけ合成
-    await execFileAsync("ffmpeg", [
+    await execFileAsync(ffmpegStatic, [
       "-y",
       "-i", video,
       "-i", audio,
